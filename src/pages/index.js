@@ -2,14 +2,14 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Header from '../components/header'
 import MailChimp from '../components/mailchimp'
-import macComp from '../../public/static/Imac2.png'
 
-import iconOne from '../../public/static/if_422-Speech_Bubble_Communication_2124417.png'
-import iconTwo from '../../public/static/if_180-Time_2123970.png'
-import iconThree from '../../public/static/if_105-Map_2123982.png'
-import iconFour from '../../public/static/if_54-Write_2123877.png'
-import iconFive from '../../public/static/if_291-Book_2124172.png'
-import iconSix from '../../public/static/if_22-Password_2672773.png'
+import macComp from './Imac2.png'
+import iconOne from './if_422-Speech_Bubble_Communication_2124417.png'
+import iconTwo from './if_180-Time_2123970.png'
+import iconThree from './if_105-Map_2123982.png'
+import iconFour from './if_54-Write_2123877.png'
+import iconFive from './if_291-Book_2124172.png'
+import iconSix from './if_22-Password_2672773.png'
 
 
 // our inline-styles

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import imgLogo from '../../public/static/written-logo.svg'
+import imgLogo from './written-logo.svg'
 
 const headingStyles = { 
   "margin" : "0" 

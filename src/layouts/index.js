@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'regenerator-runtime/runtime'
-import '../../public/static/ImacSocial.png'
+import './ImacSocial.png'
 
 import './index.css'
 
