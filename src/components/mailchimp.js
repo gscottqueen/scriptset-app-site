@@ -34,7 +34,8 @@ class MailChimp extends Component {
     this.setState({ email: event.target.value })
   }
 
-  handleSubmit = async (event) => {
+  // wrapping this async function as a workaround to bug in babel, should be resolved in Gatsby v2 https://github.com/babel/babel/issues/4550
+  handleSubmit = () => (async () => {
     // validate our email
     let userEmail = this.state.email
     const isEmailValid = validate(userEmail)
@@ -79,7 +80,7 @@ class MailChimp extends Component {
         } 
       })
     })
-  }
+  })();
 
   render () {
     return (
