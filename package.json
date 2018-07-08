@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
+    "express": "^4.16.3",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-mailchimp": "^2.2.3",
