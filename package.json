@@ -3,6 +3,10 @@
   "description": "Barebones landing page for Written App",
   "version": "1.0.0",
   "author": "gscottqueen",
+  "engines": {
+    "node": "10.4.0",
+    "npm": "6.1.0"
+  },
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "gatsby": "^1.9.273",
@@ -29,10 +33,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "browserslist": [
-    "> 1%",
-    "IE >= 9",
-    "last 2 versions"
-  ]
+  }
 }
