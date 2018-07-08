@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "written-app-site",
+  "description": "Barebones landing page for Written App",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "gscottqueen",
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "gatsby": "^1.9.273",
@@ -19,6 +19,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
+    "heroku-postbuild": "gatsby build",
+    "start": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
