@@ -50,7 +50,7 @@ const imgWrapperStyles = {
   "display" : "flex",
   "backgroundColor" : "#f2f2f2",
   "width" : "100%",
-  "maxHeight" : "100vh",
+  "maxHeight" : "90vh",
   "minHeight" : "550px"
 }
 
