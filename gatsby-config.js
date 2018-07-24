@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Written',
     tagline: 'Tell your story.',
-    titleDescription: 'web application for screenwriters',
+    titleDescription: 'New web application for screenwriters',
     description: 'Written helps writers create and collaborate to make writting screenplays, novels, and blogs; creative, effective, and proffessional. Tell your story.',
     image: 'ImacSocial.af60ef54.png',
     keywords: ['screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']

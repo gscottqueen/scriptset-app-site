@@ -133,7 +133,7 @@ const IndexPage = ({ data }) => (
           <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop storycards.</p>
         </li>
       </ul>
-      <h2 style={ leadintStyle }>We choose to be creators,</h2><p>To be part of the next chapter. We choose to work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey. Get updates, early releases, and more by signing up now.</p>
+      <h2 style={ leadintStyle }>We choose to be creators...</h2><p>We choos to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey. Get updates, early releases, and more by signing up now.</p>
       <MailChimp/>
     </div>
   </div>
