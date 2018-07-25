@@ -19,6 +19,7 @@ const Layout = ({ children, data }) => (
         { property: 'twitter:description', content: data.site.siteMetadata.description },
         { property: 'twitter:image', content: '//www.written-app.io.com/static/' + data.site.siteMetadata.image },
         { property: 'twitter:url', content: '//written-app.io/'},
+        { name: 'google-site-verification', content:data.site.siteMetadata.gverification}
       ]}
     />
     <div
@@ -46,6 +47,7 @@ export const query = graphql`
         title
         titleDescription
         description
+        gverification
         image
         keywords
       }

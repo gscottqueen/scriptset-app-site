@@ -5,6 +5,7 @@ module.exports = {
     titleDescription: 'New web application for screenwriters',
     description: 'Written helps writers create and collaborate to make writting screenplays, novels, and blogs; creative, effective, and proffessional. Tell your story.',
     image: 'ImacSocial.af60ef54.png',
+    gverification: 'sU_agIsWKce7XYoxt4f9yRmlr6XZSw4GqCZu6LQlMCo',
     keywords: ['screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']
   },
   plugins: [
