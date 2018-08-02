@@ -3,13 +3,13 @@ import Link from 'gatsby-link'
 import Header from '../components/header'
 import MailChimp from '../components/mailchimp'
 
-import macComp from './Imac2.png'
-import iconOne from './if_422-Speech_Bubble_Communication_2124417.png'
-import iconTwo from './if_180-Time_2123970.png'
-import iconThree from './if_105-Map_2123982.png'
-import iconFour from './if_54-Write_2123877.png'
-import iconFive from './if_291-Book_2124172.png'
-import iconSix from './if_22-Password_2672773.png'
+import macComp from './imac.png'
+import livecolab from './icon--livecolab.png'
+import storyclock from './icon--storyclock.png'
+import storyboard from './icon--storyboard.png'
+import proof from './icon--proof.png'
+import write from './icon--write.png'
+import storycard from './icon--storycard.png'
 
 
 // our inline-styles
@@ -103,32 +103,32 @@ const IndexPage = ({ data }) => (
       <h2 style={ statementStyle }>A new web application to help screenwriters create and collaborate.</h2>
       <ul style={ listStyle }>
         <li style={ listItemStyle }>
-          <img src={ iconFive } style={ firstListIcnStyle }/>
+          <img src={ write } style={ firstListIcnStyle }/>
           <h3>Write</h3>
           <p style={ descriptionStyle }>Styleguide driven intuitive interface lets you focus on creating.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ iconFour } style={ icnStyle }/>
+          <img src={ proof } style={ icnStyle }/>
           <h3>Proof</h3>
           <p style={ descriptionStyle }>Easy editing, proofing, and versioning.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ iconOne } style={ icnStyle }/>
+          <img src={ livecolab } style={ icnStyle }/>
           <h3>Live Colab</h3>
           <p style={ descriptionStyle }>Keep in sync with cloud based team collaboration.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ iconTwo } style={ icnStyle }/>
+          <img src={ storyclock } style={ icnStyle }/>
           <h3>Storyclock</h3>
           <p style={ descriptionStyle }>Know exactly where you are in time with Storyclock organization.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ iconThree } style={ icnStyle }/>
+          <img src={ storyboard } style={ icnStyle }/>
           <h3>Storyboard</h3>
           <p style={ descriptionStyle }>Full digital whiteboard for brainstorming and outlining complex ideas.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ iconSix } style={ icnStyle }/>
+          <img src={ storycard } style={ icnStyle }/>
           <h3>Storycard</h3>
           <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop storycards.</p>
         </li>
