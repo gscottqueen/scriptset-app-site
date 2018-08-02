@@ -108,27 +108,27 @@ const IndexPage = ({ data }) => (
           <p style={ descriptionStyle }>Styleguide driven intuitive interface lets you focus on creating.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ proof } style={ icnStyle }/>
+          <img src={ proof } style={ icnStyle } alt=""/>
           <h3>Proof</h3>
           <p style={ descriptionStyle }>Easy editing, proofing, and versioning.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ livecolab } style={ icnStyle }/>
+          <img src={ livecolab } style={ icnStyle } alt=""/>
           <h3>Live Colab</h3>
           <p style={ descriptionStyle }>Keep in sync with cloud based team collaboration.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ storyclock } style={ icnStyle }/>
+          <img src={ storyclock } style={ icnStyle } alt=""/>
           <h3>Storyclock</h3>
           <p style={ descriptionStyle }>Know exactly where you are in time with Storyclock organization.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ storyboard } style={ icnStyle }/>
+          <img src={ storyboard } style={ icnStyle } alt=""/>
           <h3>Storyboard</h3>
           <p style={ descriptionStyle }>Full digital whiteboard for brainstorming and outlining complex ideas.</p>
         </li>
         <li style={ listItemStyle }>
-          <img src={ storycard } style={ icnStyle }/>
+          <img src={ storycard } style={ icnStyle } alt=""/>
           <h3>Storycard</h3>
           <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop storycards.</p>
         </li>
