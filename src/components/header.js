@@ -3,7 +3,7 @@ import React from 'react'
 import imgLogo from './written-logo.svg'
 
 const headingStyles = { 
-  "margin" : "0" 
+  "margin" : "0"
 }
 
 const taglineStyles = { 
@@ -14,7 +14,7 @@ const taglineStyles = {
 }
 
 const logoStyle = { 
-  "width" : "200px", 
+  "width" : "200px"
 }
 
 const Header = ({ tagline }) => (

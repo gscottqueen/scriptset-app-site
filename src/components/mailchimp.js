@@ -10,24 +10,12 @@ class MailChimp extends Component {
     super()
     this.state = {
       email: '',
-      listFields: {
-        FNAME: '',
-        LNAME: ''
-      },
       response: {
         result: '',
         msg: ''
       },
       inputClass: 'mc-input',
     }
-  }
-
-  handleFNAMEChange = event => {
-    this.setState({ listFields: { FNAME: event.target.value }})
-  }
-
-  handleLNAMEChange = event => {
-    this.setState({ listFields: { LNAME: event.target.value }})
   }
 
   handleEmailChange = event => {
@@ -50,7 +38,7 @@ class MailChimp extends Component {
     }
 
     // send to mailchimp
-    const response = await addToMailchimp(this.state.email, this.state.listFields)
+    const response = await addToMailchimp(this.state.email)
     .then(response => {
       // Mailchimp always returns a 200 response
       // So we check the result for MC errors & failures
@@ -106,41 +94,13 @@ class MailChimp extends Component {
             {/* prevent submit from reloading the page */}
             event.preventDefault()
             event.stopPropagation()
-            this.handleSubmit(this.state.email, this.state.listFields)
+            this.handleSubmit(this.state.email)
           }
         }
         id="mc-embedded-subscribe-form" 
         name="mc-embedded-subscribe-form" 
-        className=""
+        className="mc-embedded-subscribe-form"
         noValidate>
-      <div id="mc_embed_signup">
-      <div id="mc_embed_signup_scroll">
-
-        <div className="mc-field-group">
-          <label 
-            htmlFor="mce-FNAME"
-            className="mc-label">First Name </label>
-          <input 
-            type="text"
-            onChange={ this.handleFNAMEChange }
-            value={ this.state.listFields.FNAME } 
-            name="FNAME" 
-            className="mc-input"
-            id="mce-FNAME"/>
-        </div>
-
-        <div className="mc-field-group">
-          <label 
-            htmlFor="mce-LNAME"
-            className="mc-label">Last Name </label>
-          <input 
-            type="text" 
-            onChange={ this.handleLNAMEChange }
-            value={ this.state.listFields.LNAME }  
-            name="LNAME" 
-            className="mc-input"
-            id="mce-LNAME"/>
-        </div>
 
         <div className="mc-field-group">
           <label 
@@ -150,7 +110,8 @@ class MailChimp extends Component {
             type="email" 
             onChange={ this.handleEmailChange }
             value={ this.state.email }  
-            name="EMAIL" 
+            name="EMAIL"
+            placeholder="Get a beta invite" 
             className={ this.state.inputClass }
             id="mce-EMAIL"/>
 
@@ -168,17 +129,13 @@ class MailChimp extends Component {
               tabIndex="-1" 
               value=""/>
           </div>
-          
-          <div className="">
-            <input 
-              type="submit" 
-              value="Sign up for early access" 
-              name="subscribe" 
-              id="mc-embedded-subscribe" 
-              className="mc-embedded-subscribe"/>
-          </div>
-        </div>
-        </div>
+
+        <input 
+          type="submit" 
+          value="Notify Me" 
+          name="subscribe" 
+          id="mc-embedded-subscribe" 
+          className="mc-embedded-subscribe"/>
       </form>
       )}
     </div> 

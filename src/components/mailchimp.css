@@ -1,5 +1,16 @@
-input.mc-input {
+.mc-embedded-subscribe-form {
+  display: flex;
+  flex: wrap;
+  margin: 0;
+}
+
+.mc-field-group {
+  display: -ms-inline-grid;
+  display: grid;
   width: 100%;
+}
+
+input.mc-input {
   border: 0;
   border-bottom: solid 2px #f2f2f2;
   margin: 0 0 20px;
@@ -12,7 +23,6 @@ input.mc-input:focus {
 }
 
 input.mc-input--error {
-  width: 100%;
   border: solid 2px #f97282;
   margin: 0;
   background-color: #f2f2f2;
@@ -25,7 +35,6 @@ input.mc-input--error {
 }
 
 .mc-label {
-  width: 100%;
   font-size: small;
   color: grey;
 }
@@ -49,15 +58,17 @@ input.mc-input--error {
 }
 
 input#mc-embedded-subscribe  {
-  width: 100%;
+  /* width: 100%; */
   font-size: normal;
   font-weight: bold;
   color: #ffffff;
   background-color: #1f1f1f;
   border: none;
-  margin: 20px 0;
-  padding: 10px;
+  margin: 26px 0 20px 0;
+  padding: 10px 10px 7px;
   cursor: pointer;
+  position: absolute;
+  right: 50px;
 }
 
 input#mc-embedded-subscribe:hover  {

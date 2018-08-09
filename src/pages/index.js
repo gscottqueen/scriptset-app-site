@@ -17,7 +17,8 @@ import storycard from './icon--storycard.png'
 const titleWrapperStyles = {
   "position" : "absolute",
   "padding": "50px",
-  "top" : "50px"
+  "top" : "50px",
+  "zIndex": "2" 
 }
 
 const asideStyles = { 
@@ -25,6 +26,15 @@ const asideStyles = {
   "padding": "50px",
   "margin": "2rem auto",
   "maxWidth": "960px"
+}
+
+const stickyFooterStyles = { 
+  "background": "white",
+  "padding": "10px 50px",
+  "width": "100%",
+  "position": "sticky",
+  "zIndex": "99",
+  "bottom": "0"
 }
 
 const imgStyles = { 
@@ -35,15 +45,27 @@ const imgStyles = {
 }
 
 const statementStyle = {  
-  "marginTop" : "25px", 
+  "margin" : "100px 0 50px 0",
   "textAlign" : "center",
   "fontWeight" : "300",
-  "margin" : "50px 0"
 }
 
 const wrapperStyles = { 
   "position" :"relative",
   "top" : "-50px"
+}
+
+const bannerStyles = { 
+  "backgroundColor" : "#f2f2f2",
+  "padding" : "6rem 0"
+}
+
+const bannerContentStyles = { 
+  "background": "#f2f2f2",
+  "padding": "50px",
+  "margin": "2rem auto",
+  "maxWidth": "960px",
+  "textAlign": "center"
 }
 
 const imgWrapperStyles = { 
@@ -133,7 +155,13 @@ const IndexPage = ({ data }) => (
           <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop storycards.</p>
         </li>
       </ul>
-      <h2 style={ leadintStyle }>We choose to be creators...</h2><p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey. Get updates, early releases, and more by signing up now.</p>
+    </div>
+    <div style={ bannerStyles }>
+      <div style={ bannerContentStyles }>
+        <h2 style={ leadintStyle }>We choose to be creators...</h2><p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey.</p>
+      </div>
+    </div>
+    <div style={ stickyFooterStyles }>
       <MailChimp/>
     </div>
   </div>
