@@ -1,6 +1,6 @@
 .mc-embedded-subscribe-form {
   display: flex;
-  flex: wrap;
+  position: relative;
   margin: 0;
 }
 
@@ -11,19 +11,19 @@
 }
 
 input.mc-input {
+  font-size: 14px;
   border: 0;
-  border-bottom: solid 2px #f2f2f2;
   margin: 0 0 20px;
   background-color: #f2f2f2;
   padding: 10px 10px 7px;
 }
 
 input.mc-input:focus {
-  border-bottom: solid 2px #000000;
+  outline: #ffffe0 solid 5px;
 }
 
 input.mc-input--error {
-  border: solid 2px #f97282;
+  outline: solid 2px #f97282;
   margin: 0;
   background-color: #f2f2f2;
   padding: 10px 10px 7px;
@@ -31,16 +31,19 @@ input.mc-input--error {
 
 .mc-input--error-msg {
   font-size: small;
+  font-weight: 700;
   color: #f97282;
 }
 
 .mc-label {
   font-size: small;
-  color: grey;
+  color: #fff;
+  font-weight: 900;
 }
 
 .mc-label.required > span {
   color: #f97282;
+  font-weight: 900;
 }
 
 .response.error {
@@ -58,17 +61,16 @@ input.mc-input--error {
 }
 
 input#mc-embedded-subscribe  {
-  /* width: 100%; */
-  font-size: normal;
+  font-size: 14px;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff ;
   background-color: #1f1f1f;
   border: none;
-  margin: 26px 0 20px 0;
-  padding: 10px 10px 7px;
+  padding: 10px 20px 7px;
   cursor: pointer;
   position: absolute;
-  right: 50px;
+  right: 0;
+  bottom: 20px;
 }
 
 input#mc-embedded-subscribe:hover  {

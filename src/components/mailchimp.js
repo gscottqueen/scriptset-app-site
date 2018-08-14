@@ -18,10 +18,6 @@ class MailChimp extends Component {
     }
   }
 
-  handleEmailChange = event => {
-    this.setState({ email: event.target.value })
-  }
-
   // wrapping this async function as a workaround to bug in babel, should be resolved in Gatsby v2 https://github.com/babel/babel/issues/4550
   handleSubmit = () => (async () => {
     // validate our email
@@ -32,7 +28,7 @@ class MailChimp extends Component {
         response: {
           result: `error`,
           msg: 'Must be a valid email address.'
-        }, 
+        },
         inputClass: 'mc-input--error',
       })
     }
@@ -106,6 +102,8 @@ class MailChimp extends Component {
           <label 
             htmlFor="mce-EMAIL"
             className="mc-label required">Email Address<span>*</span></label>
+            { this.state.inputClass === `mc-input--error` ? 
+            <span className="mc-input--error-msg" >Something's not right...Give it another go?</span> : null }
           <input 
             type="email" 
             onChange={ this.handleEmailChange }
@@ -114,10 +112,6 @@ class MailChimp extends Component {
             placeholder="Get a beta invite" 
             className={ this.state.inputClass }
             id="mce-EMAIL"/>
-
-          { this.state.inputClass === `mc-input--error` ? 
-            <span className="mc-input--error-msg" >Something's not right...Give it another go?</span> : null }
-        </div>
 
           {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
           <div 
@@ -136,6 +130,7 @@ class MailChimp extends Component {
           name="subscribe" 
           id="mc-embedded-subscribe" 
           className="mc-embedded-subscribe"/>
+        </div>
       </form>
       )}
     </div> 
