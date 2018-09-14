@@ -1,11 +1,11 @@
 import React from 'react'
 
-import livecolab from './icon--livecolab.png'
-import storyclock from './icon--storyclock.png'
-import storyboard from './icon--storyboard.png'
-import proof from './icon--proof.png'
-import write from './icon--write.png'
-import storycard from './icon--storycard.png'
+import livecolab from './icon--livecolab.svg'
+import storyclock from './icon--storyclock.svg'
+import storyboard from './icon--storyboard.svg'
+import proof from './icon--proof.svg'
+import write from './icon--write.svg'
+import storycard from './icon--storycard.svg'
 
 const listStyle = {
   "display" : "flex",
