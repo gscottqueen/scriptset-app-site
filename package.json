@@ -28,7 +28,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cc": "rm -rf .cache/" 
+    "cc": "rm -rf .cache/"
   },
   "devDependencies": {
     "babel-plugin-transform-regenerator": "^6.26.0",
