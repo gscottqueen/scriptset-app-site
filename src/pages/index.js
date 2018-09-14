@@ -2,7 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Header from '../components/header'
 import FeatureBlock from '../components/feature-block/feature-block'
-import MailChimp from '../components/mailchimp'
+import LeadIn from '../components/lead-in'
+import StatementBanner from '../components/statment-banner'
+import MailChimp from '../components/mail-chimp/mailchimp'
 
 import macComp from './imac.png'
 
@@ -26,9 +28,11 @@ const stickyFooterStyles = {
   "background": "#000",
   "padding": "50px",
   "width": "100%",
-  "position": "sticky",
-  "zIndex": "99",
-  "bottom": "0"
+  // "maxWidth": "960px",
+  "margin": "0 auto",
+  // "position": "sticky",
+  // "zIndex": "99",
+  // "bottom": "0"
 }
 
 const imgStyles = { 
@@ -38,27 +42,8 @@ const imgStyles = {
   "top" : "50px"
 }
 
-const statementStyle = {  
-  "margin" : "100px 0 50px 0",
-  "textAlign" : "center",
-  "fontWeight" : "300",
-}
-
 const wrapperStyles = { 
   "position" :"relative",
-}
-
-const bannerStyles = { 
-  "backgroundColor" : "#f2f2f2",
-  "padding" : "6rem 0"
-}
-
-const bannerContentStyles = { 
-  "background": "#f2f2f2",
-  "padding": "50px",
-  "margin": "2rem auto",
-  "maxWidth": "960px",
-  "textAlign": "center"
 }
 
 const imgWrapperStyles = { 
@@ -67,10 +52,6 @@ const imgWrapperStyles = {
   "width" : "100%",
   "maxHeight" : "90vh",
   "minHeight" : "550px"
-}
-
-const leadintStyle = {
-  "fontSize" : "40px",
 }
 
 const IndexPage = ({ data }) => (
@@ -82,14 +63,10 @@ const IndexPage = ({ data }) => (
       <img src={ macComp } style={ imgStyles }/>
     </div>
     <div style={ asideStyles }>
-      <h2 style={ statementStyle }>A new web application to help screenwriters create and collaborate.</h2>
+      <LeadIn/>
       <FeatureBlock/>
     </div>
-    <div style={ bannerStyles }>
-      <div style={ bannerContentStyles }>
-        <h2 style={ leadintStyle }>We choose to be creators...</h2><p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey.</p>
-      </div>
-    </div>
+    <StatementBanner/>
     <div style={ stickyFooterStyles }>
       <MailChimp/>
     </div>
