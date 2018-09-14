@@ -18,6 +18,11 @@ class MailChimp extends Component {
     }
   }
 
+  // our input event
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value })
+  }
+
   // wrapping this async function as a workaround to bug in babel, should be resolved in Gatsby v2 https://github.com/babel/babel/issues/4550
   handleSubmit = () => (async () => {
     // validate our email
@@ -50,7 +55,7 @@ class MailChimp extends Component {
         this.setState({       
           response: {
             result: response.result,
-            msg: 'Almost finished...To complete signing up, please check your inbox for the email we sent.'
+            msg: response.msg
           } 
         })
       }
@@ -70,14 +75,14 @@ class MailChimp extends Component {
     return (
       <div>
       { this.state.response.result === `error` ? 
-      <div id="mce-responses" className="">
+      <div id="mce-responses" className="input-group">
         <div className={ this.state.response.result } id="mce-response">
           <h2 className="response error">Sorry...</h2>
           <p className="msg">{ this.state.response.msg }</p>
         </div>
       </div> : null }
       { this.state.response.result === `success` ? (
-        <div id="mce-responses" className="">
+        <div id="mce-responses" className="input-group">
             <div className={ this.state.response.result } id="mce-response">
               <h2 className="response success">Perfect</h2>
               <p className="msg">{ this.state.response.msg }</p>
@@ -97,40 +102,45 @@ class MailChimp extends Component {
         name="mc-embedded-subscribe-form" 
         className="mc-embedded-subscribe-form"
         noValidate>
-
         <div className="mc-field-group">
-          <label 
-            htmlFor="mce-EMAIL"
-            className="mc-label required">Email Address<span>*</span></label>
-            { this.state.inputClass === `mc-input--error` ? 
-            <span className="mc-input--error-msg" >Something's not right...Give it another go?</span> : null }
-          <input 
-            type="email" 
-            onChange={ this.handleEmailChange }
-            value={ this.state.email }  
-            name="EMAIL"
-            placeholder="Get a beta invite" 
-            className={ this.state.inputClass }
-            id="mce-EMAIL"/>
-
-          {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-          <div 
-            hidden 
-            aria-hidden="true">
+        { this.state.inputClass === `mc-input--error` ? 
+        <label 
+          htmlFor="mce-EMAIL"
+          className="mc-label required">Email Address<span 
+        className="mc-input--error-msg" >*</span></label> : 
+        <label 
+          htmlFor="mce-EMAIL"
+          className="mc-label required">Email Address</label>}
+          <div className="input-group">
             <input 
-              type="text" 
-              name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
-              tabIndex="-1" 
-              value=""/>
+              type="email" 
+              onChange={ this.handleEmailChange }
+              value={ this.state.email }  
+              name="EMAIL"
+              placeholder="Get a beta invite" 
+              className={ this.state.inputClass }
+              id="mce-EMAIL"/>
+              <input 
+                type="submit" 
+                value="Notify Me" 
+                name="subscribe" 
+                id="mc-embedded-subscribe" 
+                className="mc-embedded-subscribe"/>
+            </div>
           </div>
-
-        <input 
-          type="submit" 
-          value="Notify Me" 
-          name="subscribe" 
-          id="mc-embedded-subscribe" 
-          className="mc-embedded-subscribe"/>
-        </div>
+          {/* input error message */}
+          { this.state.inputClass === `mc-input--error` ? 
+          <span className="mc-input--error-msg" >Something's not right...Give it another go?</span> : null }
+            {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+            <div 
+              hidden 
+              aria-hidden="true">
+              <input 
+                type="text" 
+                name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
+                tabIndex="-1" 
+                value=""/>
+            </div>
       </form>
       )}
     </div> 

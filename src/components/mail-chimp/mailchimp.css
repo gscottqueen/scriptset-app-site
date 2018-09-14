@@ -1,21 +1,30 @@
 .mc-embedded-subscribe-form {
-  display: flex;
-  position: relative;
   margin: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .mc-field-group {
   display: -ms-inline-grid;
   display: grid;
   width: 100%;
+  position: relative;
 }
 
-input.mc-input {
+.input-group {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+input {
+  outline: solid 2px #fff;
   font-size: 14px;
   border: 0;
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
   background-color: #f2f2f2;
   padding: 10px 10px 7px;
+  width: 100%;
 }
 
 input.mc-input:focus {
@@ -24,9 +33,6 @@ input.mc-input:focus {
 
 input.mc-input--error {
   outline: solid 2px #f97282;
-  margin: 0;
-  background-color: #f2f2f2;
-  padding: 10px 10px 7px;
 }
 
 .mc-input--error-msg {
@@ -41,10 +47,10 @@ input.mc-input--error {
   font-weight: 900;
 }
 
-.mc-label.required > span {
+/* .mc-label.required > span {
   color: #f97282;
   font-weight: 900;
-}
+} */
 
 .response.error {
   color: #f97282;
@@ -65,12 +71,14 @@ input#mc-embedded-subscribe  {
   font-weight: bold;
   color: #fff ;
   background-color: #1f1f1f;
-  border: none;
   padding: 10px 20px 7px;
   cursor: pointer;
   position: absolute;
   right: 0;
-  bottom: 20px;
+  bottom: 0;
+  width: auto;
+  border: 0;
+  outline: 0;
 }
 
 input#mc-embedded-subscribe:hover  {
