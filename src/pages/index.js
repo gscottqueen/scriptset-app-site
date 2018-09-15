@@ -35,7 +35,8 @@ const stickyFooterStyles = {
   "margin": "0 auto",
   "position": "sticky",
   "zIndex": "99",
-  "bottom": "0"
+  "bottom": "0",
+  "border": "2px solid #000"
 }
 
 const statementStyles = {
