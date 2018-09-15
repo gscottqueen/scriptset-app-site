@@ -33,7 +33,7 @@ const stickyFooterStyles = {
   "padding": "15px 50px 5px 50px",
   "width": "100%",
   "margin": "0 auto",
-  "position": "sticky",
+  "position": "fixed",
   "zIndex": "99",
   "bottom": "0",
   "border": "2px solid #000"

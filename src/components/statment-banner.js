@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 const bannerStyles = { 
   "backgroundColor" : "#f2f2f2",
-  "padding" : "6rem 0"
+  "padding" : "3rem 0px 6rem 0px"
 }
 
 const bannerContentStyles = { 
@@ -23,8 +23,9 @@ const statementStyle = {
 const StatementBanner = () => (
   <div style={ bannerStyles }>
     <div style={ bannerContentStyles }>
-      <Fade bottom big>
-        <h2 style={ statementStyle }>We choose to be creators...</h2><p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey.</p>
+        <h2 style={ statementStyle }>We choose to be creators...</h2>
+        <Fade bottom big>
+          <p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey.</p>
       </Fade>
     </div>
   </div>
