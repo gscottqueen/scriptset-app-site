@@ -1,11 +1,16 @@
 import React from 'react'
-import Link from 'gatsby-link'
+
+// nodes
+import Fade from 'react-reveal/Fade';
+
+// our components
 import Header from '../components/header'
 import FeatureBlock from '../components/feature-block/feature-block'
 import LeadIn from '../components/lead-in'
 import StatementBanner from '../components/statment-banner'
 import MailChimp from '../components/mail-chimp/mailchimp'
 
+// our assets
 import macComp from './imac.png'
 
 // our inline-styles
@@ -13,7 +18,8 @@ import macComp from './imac.png'
 const titleWrapperStyles = {
   "position" : "absolute",
   "padding": "50px",
-  "top" : "50px",
+  "top" : "420px",
+  "left" : "30px",
   "zIndex": "2" 
 }
 
@@ -26,17 +32,28 @@ const asideStyles = {
 
 const stickyFooterStyles = { 
   "background": "#000",
-  "padding": "50px",
+  "padding": "15px 50px 5px 50px",
   "width": "100%",
-  // "maxWidth": "960px",
   "margin": "0 auto",
-  // "position": "sticky",
-  // "zIndex": "99",
-  // "bottom": "0"
+  "position": "sticky",
+  "zIndex": "99",
+  "bottom": "0"
+}
+
+const statementStyles = {
+  "fontSize": "2rem",
+  // "maxWidth": "380px",
+  "padding": "50px",
+  "background": "black",
+  "color": "white",
+  "lineHeight": "1.2",
+  "float": "right",
+  "margin": "0 auto",
+  "position": "absolute"
 }
 
 const imgStyles = { 
-  "margin" : "auto auto 0 auto",
+  "margin" : "auto",
   "padding" : "0",
   "position" :"relative",
   "top" : "50px"
@@ -56,6 +73,7 @@ const imgWrapperStyles = {
 
 const IndexPage = ({ data }) => (
   <div style={ wrapperStyles }>
+  <div style={ statementStyles }>A new web application to help screenwriters create and collaborate.</div>
     <div style={ titleWrapperStyles }>
       <Header siteTitle={ data.site.siteMetadata.title } tagline={ data.site.siteMetadata.tagline }/>
     </div>
@@ -67,9 +85,11 @@ const IndexPage = ({ data }) => (
       <FeatureBlock/>
     </div>
     <StatementBanner/>
-    <div style={ stickyFooterStyles }>
-      <MailChimp/>
-    </div>
+    <Fade bottom big delay="500" duration="2500">
+      <div style={ stickyFooterStyles }>
+        <MailChimp/>
+      </div>
+    </Fade>
   </div>
 )
 
