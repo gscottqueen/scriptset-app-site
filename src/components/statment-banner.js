@@ -1,8 +1,5 @@
 import React from 'react'
 
-// nodes
-import Fade from 'react-reveal/Fade';
-
 const bannerStyles = { 
   "backgroundColor" : "#f2f2f2",
   "padding" : "3rem 0px 6rem 0px"
@@ -24,9 +21,7 @@ const StatementBanner = () => (
   <div style={ bannerStyles }>
     <div style={ bannerContentStyles }>
         <h2 style={ statementStyle }>We choose to be creators...</h2>
-        <Fade bottom big>
           <p>We choose to be part of the next chapter. To work day and night, so you can be free to make the next great screenplay. We hope that you will join us on this exciting journey.</p>
-      </Fade>
     </div>
   </div>
 )
