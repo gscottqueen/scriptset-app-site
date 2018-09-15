@@ -41,7 +41,7 @@ const stickyFooterStyles = {
 const statementStyles = {
   "fontSize": "3rem",
   "fontWeight": "900",
-  "padding": "50px",
+  "padding": "50px 10%;",
   "background": "black",
   "color": "white",
   "lineHeight": "1.2",
