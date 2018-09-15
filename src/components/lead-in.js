@@ -1,7 +1,7 @@
 import React from 'react'
 
 const leadInStyle = {  
-  "margin" : "100px 0 50px 0",
+  "margin" : "50px 0",
   "textAlign" : "center",
   "fontWeight" : "300",
 }
