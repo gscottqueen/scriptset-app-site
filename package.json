@@ -15,7 +15,8 @@
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-mailchimp": "^2.2.3",
     "gatsby-plugin-react-helmet": "^2.0.10",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-reveal": "^1.2.2"
   },
   "keywords": [
     "gatsby"
