@@ -7,7 +7,7 @@ const leadInStyle = {
 }
 
 const LeadIn = () => (
-  <h2 style={ leadInStyle }>A new web application to help screenwriters create and collaborate.</h2>
+  <h2 style={ leadInStyle }>Great features that make your writting more productive and efficient.</h2>
 )
 
 export default LeadIn
