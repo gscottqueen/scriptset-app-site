@@ -18,15 +18,13 @@ import macComp from './imac.png'
 const titleWrapperStyles = {
   "position" : "absolute",
   "padding": "50px",
-  "top" : "420px",
-  "left" : "30px",
   "zIndex": "2" 
 }
 
 const asideStyles = { 
   "background": "white",
   "padding": "50px",
-  "margin": "2rem auto",
+  "margin": "auto",
   "maxWidth": "960px"
 }
 
@@ -41,22 +39,21 @@ const stickyFooterStyles = {
 }
 
 const statementStyles = {
-  "fontSize": "2rem",
-  // "maxWidth": "380px",
+  "fontSize": "3rem",
+  "fontWeight": "900",
   "padding": "50px",
   "background": "black",
   "color": "white",
   "lineHeight": "1.2",
-  "float": "right",
-  "margin": "0 auto",
-  "position": "absolute"
+  "width": "100%",
+  "textAlign": "center",
+  "wordBreak": "normal"
 }
 
 const imgStyles = { 
   "margin" : "auto",
   "padding" : "0",
   "position" :"relative",
-  "top" : "50px"
 }
 
 const wrapperStyles = { 
@@ -67,19 +64,19 @@ const imgWrapperStyles = {
   "display" : "flex",
   "backgroundColor" : "#f2f2f2",
   "width" : "100%",
-  "maxHeight" : "90vh",
+  "maxHeight" : "110vh",
   "minHeight" : "550px"
 }
 
 const IndexPage = ({ data }) => (
   <div style={ wrapperStyles }>
-  <div style={ statementStyles }>A new web application to help screenwriters create and collaborate.</div>
     <div style={ titleWrapperStyles }>
       <Header siteTitle={ data.site.siteMetadata.title } tagline={ data.site.siteMetadata.tagline }/>
     </div>
     <div style={ imgWrapperStyles }>
       <img src={ macComp } style={ imgStyles }/>
     </div>
+    <div style={ statementStyles }>A new web application to help screenwriters create and collaborate.</div>
     <div style={ asideStyles }>
       <LeadIn/>
       <FeatureBlock/>
