@@ -78,14 +78,14 @@ class MailChimp extends Component {
       <div id="mce-responses" className="input-group">
         <div className={ this.state.response.result } id="mce-response">
           <h2 className="response error">Sorry...</h2>
-          <p className="msg">{ this.state.response.msg }</p>
+          <p className="msg" dangerouslySetInnerHTML={{__html: this.state.response.msg}}/>
         </div>
       </div> : null }
       { this.state.response.result === `success` ? (
         <div id="mce-responses" className="input-group">
             <div className={ this.state.response.result } id="mce-response">
               <h2 className="response success">Perfect</h2>
-              <p className="msg">{ this.state.response.msg }</p>
+              <p className="msg" dangerouslySetInnerHTML={{__html: this.state.response.msg}}/>{ this.state.response.msg }/>
             </div>
           </div>
       ) : (
