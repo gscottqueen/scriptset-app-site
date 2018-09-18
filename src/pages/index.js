@@ -11,7 +11,7 @@ import StatementBanner from '../components/statment-banner'
 import MailChimp from '../components/mail-chimp/mailchimp'
 
 // our assets
-import macComp from './imac2.png'
+import macComp from './imac.png'
 
 // our inline-styles
 // TODO: set up components and related css
