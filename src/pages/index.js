@@ -11,7 +11,7 @@ import StatementBanner from '../components/statment-banner'
 import MailChimp from '../components/mail-chimp/mailchimp'
 
 // our assets
-import macComp from './imac.png'
+import macComp from './imac2.png'
 
 // our inline-styles
 // TODO: set up components and related css
@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => (
     <div style={ imgWrapperStyles }>
       <img src={ macComp } style={ imgStyles }/>
     </div>
-    <div style={ statementStyles }>A new web application to help screenwriters create and collaborate.</div>
+    <div style={ statementStyles }>A new progressive web application to help screenwriters get from <em>script</em> to set.</div>
     <div style={ asideStyles }>
       <LeadIn/>
       <FeatureBlock/>

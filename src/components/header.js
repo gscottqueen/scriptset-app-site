@@ -1,6 +1,6 @@
 import React from 'react'
 
-import imgLogo from './written-logo.svg'
+import imgLogo from './scriptset-logo-web.svg'
 
 const headingStyles = { 
   "margin" : "0"
@@ -9,12 +9,12 @@ const headingStyles = {
 const taglineStyles = { 
   "fontSize" : "small",
   "position" : "relative",
-  "top" : "-2.5rem",
-  "right" : "-4rem" 
+  "top" : "-1.8rem",
+  "right" : "-9.5rem" 
 }
 
 const logoStyle = { 
-  "width" : "200px"
+  "width" : "250px"
 }
 
 const Header = ({ tagline }) => (

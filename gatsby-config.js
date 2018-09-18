@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Written App',
-    tagline: 'Tell your story.',
+    title: 'Scriptset',
+    tagline: 'Get made.',
     titleDescription: 'New web application for screenwriters',
-    description: 'Written App helps writers create and collaborate to make writting screenplays, novels, and blogs; creative, effective, and proffessional. Tell your story.',
+    description: 'Scriptset helps screenwriters get from script to set.',
     image: 'ImacSocial.af60ef54.png',
     gverification: 'sU_agIsWKce7XYoxt4f9yRmlr6XZSw4GqCZu6LQlMCo',
     keywords: ['screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']
