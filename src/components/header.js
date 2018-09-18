@@ -1,6 +1,6 @@
 import React from 'react'
 
-import imgLogo from './scriptset-logo-web.svg'
+import imgLogo from './scriptset-logo.svg'
 
 const headingStyles = { 
   "margin" : "0"
@@ -9,7 +9,7 @@ const headingStyles = {
 const taglineStyles = { 
   "fontSize" : "small",
   "position" : "relative",
-  "top" : "-1.8rem",
+  "top" : "-1.6rem",
   "right" : "-9.5rem" 
 }
 
