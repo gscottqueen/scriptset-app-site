@@ -30,7 +30,7 @@ const asideStyles = {
 
 const stickyFooterStyles = { 
   "background": "#000",
-  "padding": "15px 50px 5px 50px",
+  "padding": "15px 50px",
   "width": "100%",
   "margin": "0 auto",
   "position": "fixed",
@@ -83,7 +83,7 @@ const IndexPage = ({ data }) => (
       <FeatureBlock/>
     </div>
     <StatementBanner/>
-    <Fade bottom big delay="500" duration="2500">
+    <Fade bottom big delay={250} duration={2500}>
       <div style={ stickyFooterStyles }>
         <MailChimp/>
       </div>
