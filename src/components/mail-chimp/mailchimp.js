@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { validate } from 'email-validator'
 
+// nodes
+import Fade from 'react-reveal/Fade';
+
 import './mailchimp.css'
 
 class MailChimp extends Component {
@@ -20,7 +23,10 @@ class MailChimp extends Component {
 
   // our input event
   handleEmailChange = event => {
-    this.setState({ email: event.target.value })
+    this.setState({ 
+      email: event.target.value,
+      inputClass: 'mc-input'
+     })
   }
 
   // wrapping this async function as a workaround to bug in babel, should be resolved in Gatsby v2 https://github.com/babel/babel/issues/4550
@@ -48,7 +54,8 @@ class MailChimp extends Component {
           response: {
             result: response.result,
             msg: response.msg
-          } 
+          },
+          inputClass: 'mc-input--error',
         })
       } else {
         // Email address succesfully subcribed to Mailchimp
@@ -56,7 +63,8 @@ class MailChimp extends Component {
           response: {
             result: response.result,
             msg: response.msg
-          } 
+          },
+          inputClass: 'mc-input--success',
         })
       }
     })
@@ -66,7 +74,8 @@ class MailChimp extends Component {
         response: {
           result: response.result,
           msg: response.msg
-        } 
+        },
+        inputClass: 'mc-input--success',
       })
     })
   })();
@@ -74,22 +83,8 @@ class MailChimp extends Component {
   render () {
     return (
       <div>
-      { this.state.response.result === `error` ? 
-      <div id="mce-responses" className="input-group">
-        <div className={ this.state.response.result } id="mce-response">
-          <h2 className="response error">Sorry...</h2>
-          <p className="msg" dangerouslySetInnerHTML={{__html: this.state.response.msg}}/>
-        </div>
-      </div> : null }
-      { this.state.response.result === `success` ? (
-        <div id="mce-responses" className="input-group">
-            <div className={ this.state.response.result } id="mce-response">
-              <h2 className="response success">Perfect</h2>
-              <p className="msg" dangerouslySetInnerHTML={{__html: this.state.response.msg}}/>{ this.state.response.msg }/>
-            </div>
-          </div>
-      ) : (
       <form 
+        className={this.state.inputClass + "-msg"}
         onSubmit={
           (event) => {
             {/* prevent submit from reloading the page */}
@@ -107,7 +102,7 @@ class MailChimp extends Component {
         <label 
           htmlFor="mce-EMAIL"
           className="mc-label required">Email Address<span 
-        className="mc-input--error-msg" >*</span></label> : 
+          className={this.state.inputClass} >*</span></label> : 
         <label 
           htmlFor="mce-EMAIL"
           className="mc-label required">Email Address</label>}
@@ -128,21 +123,22 @@ class MailChimp extends Component {
                 className="mc-embedded-subscribe"/>
             </div>
           </div>
-          {/* input error message */}
-          { this.state.inputClass === `mc-input--error` ? 
-          <span className="mc-input--error-msg" >Something's not right...Give it another go?</span> : null }
-            {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-            <div 
-              hidden 
-              aria-hidden="true">
-              <input 
-                type="text" 
-                name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
-                tabIndex="-1" 
-                value=""/>
-            </div>
-      </form>
-      )}
+          {/* input response message */}
+          { this.state.response.result === `error` || `success` ? 
+            <span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} />
+           : null }
+          {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+          <div 
+            hidden 
+            aria-hidden="true">
+            <input 
+              type="text" 
+              name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
+              tabIndex="-1" 
+              value=""/>
+          </div>
+        </form>
+        {/* } */}
     </div> 
     )
   }
