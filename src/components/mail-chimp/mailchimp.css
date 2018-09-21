@@ -23,6 +23,10 @@
   font-weight: 900;
 }
 
+.mc-input-msg {
+  display: none;
+}
+
 input {
   font-size: 14px;
   border: 0;
