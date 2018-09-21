@@ -102,68 +102,66 @@ class MailChimp extends Component {
   render () {
     return (
       <div>
-    {/* { this.state.response.result === `error` ? 
-    null : */}
-    <Fade bottom delay={2000} duration={1500} when={this.state.show}>
-      <div style={ stickyFooterStyles } >
-        <form 
-            className={this.state.inputClass + "-msg"}
-            onSubmit={
-              (event) => {
-                {/* prevent submit from reloading the page */}
-                event.preventDefault()
-                event.stopPropagation()
-                this.handleSubmit(this.state.email)
-              }
-            }
-            id="mc-embedded-subscribe-form" 
-            name="mc-embedded-subscribe-form" 
-            className="mc-embedded-subscribe-form"
-            noValidate>
-            <div className="mc-field-group">
-            { this.state.inputClass === `mc-input--error` ? 
-            <label 
-              htmlFor="mce-EMAIL"
-              className="mc-label required">Email Address<span 
-              className={this.state.inputClass} >*</span></label> : 
-            <label 
-              htmlFor="mce-EMAIL"
-              className="mc-label required">Email Address</label>}
-              <div className="input-group">
-                <input 
-                  type="email" 
-                  onChange={ this.handleEmailChange }
-                  value={ this.state.email }  
-                  name="EMAIL"
-                  placeholder="Get a beta invite" 
-                  className={ this.state.inputClass }
-                  id="mce-EMAIL"/>
-                  <input 
-                    type="submit" 
-                    value="Notify Me" 
-                    name="subscribe" 
-                    id="mc-embedded-subscribe" 
-                    className="mc-embedded-subscribe"/>
-                </div>
+        <Fade bottom delay={2000} duration={1500} when={this.state.show}>
+          <div style={ stickyFooterStyles } >
+            <form 
+                className={this.state.inputClass + "-msg"}
+                onSubmit={
+                  (event) => {
+                    {/* prevent submit from reloading the page */}
+                    event.preventDefault()
+                    event.stopPropagation()
+                    this.handleSubmit(this.state.email)
+                  }
+                }
+                id="mc-embedded-subscribe-form" 
+                name="mc-embedded-subscribe-form" 
+                className="mc-embedded-subscribe-form"
+                noValidate>
+                <div className="mc-field-group">
+                { this.state.inputClass === `mc-input--error` ? 
+                <label 
+                  htmlFor="mce-EMAIL"
+                  className="mc-label required">Email Address<span 
+                  className={this.state.inputClass} >*</span></label> : 
+                <label 
+                  htmlFor="mce-EMAIL"
+                  className="mc-label required">Email Address</label>}
+                  <div className="input-group">
+                    <input 
+                      type="email" 
+                      onChange={ this.handleEmailChange }
+                      value={ this.state.email }  
+                      name="EMAIL"
+                      placeholder="Get a beta invite" 
+                      className={ this.state.inputClass }
+                      id="mce-EMAIL"/>
+                      <input 
+                        type="submit" 
+                        value="Notify Me" 
+                        name="subscribe" 
+                        id="mc-embedded-subscribe" 
+                        className="mc-embedded-subscribe"/>
+                    </div>
+                  </div>
+                  <div 
+                    hidden 
+                    aria-hidden="true">
+                    <input 
+                      type="text" 
+                      name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
+                      tabIndex="-1" 
+                      value=""/>
+                  </div>
+                </form>
+                {/* input response message */}
+                { this.state.response.result === `error` || `success` ? 
+                  <Fade top><span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} /></Fade>
+                : null }
               </div>
-              <div 
-                hidden 
-                aria-hidden="true">
-                <input 
-                  type="text" 
-                  name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
-                  tabIndex="-1" 
-                  value=""/>
-              </div>
-            </form>
-            {/* input response message */}
-            { this.state.response.result === `error` || `success` ? 
-              <Fade top><span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} /></Fade>
-            : null }
+            </Fade>
           </div>
-        </Fade>
-    </div> 
-    )
+          )
   }
 }
 
