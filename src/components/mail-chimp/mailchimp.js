@@ -7,11 +7,23 @@ import Fade from 'react-reveal/Fade';
 
 import './mailchimp.css'
 
+const stickyFooterStyles = { 
+  "background": "#000",
+  "padding": "15px 50px",
+  "width": "100%",
+  "margin": "0 auto",
+  "position": "fixed",
+  "zIndex": "99",
+  "bottom": "0",
+  "border": "2px solid #000"
+}
+
 class MailChimp extends Component {
 
   constructor() {
     super()
     this.state = {
+      show: false,
       email: '',
       response: {
         result: '',
@@ -26,6 +38,12 @@ class MailChimp extends Component {
     this.setState({ 
       email: event.target.value,
       inputClass: 'mc-input'
+     })
+  }
+
+  componentDidMount = () => {
+    this.setState({ 
+      show: true
      })
   }
 
@@ -59,7 +77,8 @@ class MailChimp extends Component {
         })
       } else {
         // Email address succesfully subcribed to Mailchimp
-        this.setState({       
+        this.setState({ 
+          show: !this.state.show,    
           response: {
             result: response.result,
             msg: response.msg
@@ -75,7 +94,7 @@ class MailChimp extends Component {
           result: response.result,
           msg: response.msg
         },
-        inputClass: 'mc-input--success',
+        inputClass: 'mc-input--error',
       })
     })
   })();
@@ -83,62 +102,66 @@ class MailChimp extends Component {
   render () {
     return (
       <div>
-      <form 
-        className={this.state.inputClass + "-msg"}
-        onSubmit={
-          (event) => {
-            {/* prevent submit from reloading the page */}
-            event.preventDefault()
-            event.stopPropagation()
-            this.handleSubmit(this.state.email)
-          }
-        }
-        id="mc-embedded-subscribe-form" 
-        name="mc-embedded-subscribe-form" 
-        className="mc-embedded-subscribe-form"
-        noValidate>
-        <div className="mc-field-group">
-        { this.state.inputClass === `mc-input--error` ? 
-        <label 
-          htmlFor="mce-EMAIL"
-          className="mc-label required">Email Address<span 
-          className={this.state.inputClass} >*</span></label> : 
-        <label 
-          htmlFor="mce-EMAIL"
-          className="mc-label required">Email Address</label>}
-          <div className="input-group">
-            <input 
-              type="email" 
-              onChange={ this.handleEmailChange }
-              value={ this.state.email }  
-              name="EMAIL"
-              placeholder="Get a beta invite" 
-              className={ this.state.inputClass }
-              id="mce-EMAIL"/>
-              <input 
-                type="submit" 
-                value="Notify Me" 
-                name="subscribe" 
-                id="mc-embedded-subscribe" 
-                className="mc-embedded-subscribe"/>
-            </div>
+    {/* { this.state.response.result === `error` ? 
+    null : */}
+    <Fade bottom delay={2000} duration={1500} when={this.state.show}>
+      <div style={ stickyFooterStyles } >
+        <form 
+            className={this.state.inputClass + "-msg"}
+            onSubmit={
+              (event) => {
+                {/* prevent submit from reloading the page */}
+                event.preventDefault()
+                event.stopPropagation()
+                this.handleSubmit(this.state.email)
+              }
+            }
+            id="mc-embedded-subscribe-form" 
+            name="mc-embedded-subscribe-form" 
+            className="mc-embedded-subscribe-form"
+            noValidate>
+            <div className="mc-field-group">
+            { this.state.inputClass === `mc-input--error` ? 
+            <label 
+              htmlFor="mce-EMAIL"
+              className="mc-label required">Email Address<span 
+              className={this.state.inputClass} >*</span></label> : 
+            <label 
+              htmlFor="mce-EMAIL"
+              className="mc-label required">Email Address</label>}
+              <div className="input-group">
+                <input 
+                  type="email" 
+                  onChange={ this.handleEmailChange }
+                  value={ this.state.email }  
+                  name="EMAIL"
+                  placeholder="Get a beta invite" 
+                  className={ this.state.inputClass }
+                  id="mce-EMAIL"/>
+                  <input 
+                    type="submit" 
+                    value="Notify Me" 
+                    name="subscribe" 
+                    id="mc-embedded-subscribe" 
+                    className="mc-embedded-subscribe"/>
+                </div>
+              </div>
+              <div 
+                hidden 
+                aria-hidden="true">
+                <input 
+                  type="text" 
+                  name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
+                  tabIndex="-1" 
+                  value=""/>
+              </div>
+            </form>
+            {/* input response message */}
+            { this.state.response.result === `error` || `success` ? 
+              <Fade top><span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} /></Fade>
+            : null }
           </div>
-          {/* input response message */}
-          { this.state.response.result === `error` || `success` ? 
-            <span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} />
-           : null }
-          {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-          <div 
-            hidden 
-            aria-hidden="true">
-            <input 
-              type="text" 
-              name="b_c96c18d057c48b5a5c698e040_7b1d3d1a01" 
-              tabIndex="-1" 
-              value=""/>
-          </div>
-        </form>
-        {/* } */}
+        </Fade>
     </div> 
     )
   }

@@ -83,11 +83,9 @@ const IndexPage = ({ data }) => (
       <FeatureBlock/>
     </div>
     <StatementBanner/>
-    <Fade bottom big delay={250} duration={2500}>
-      <div style={ stickyFooterStyles }>
-        <MailChimp/>
-      </div>
-    </Fade>
+    {/* <Fade bottom big delay={500} duration={2500}> */}
+      <MailChimp />
+    {/* </Fade> */}
   </div>
 )
 
