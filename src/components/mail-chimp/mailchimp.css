@@ -17,6 +17,12 @@
   max-width: 900px;
 }
 
+.mc-label {
+  font-size: small;
+  color: #fff;
+  font-weight: 900;
+}
+
 input {
   font-size: 14px;
   border: 0;
@@ -25,10 +31,6 @@ input {
   padding: 10px 10px 7px;
   width: 100%;
   border-radius: 0;
-}
-
-.mc-input-msg {
-  display: none;
 }
 
 input.mc-input:focus {
@@ -47,8 +49,6 @@ input.mc-input--error {
   margin: 0;
   max-width: 900px;
   margin: 0 auto;
-  /* position: fixed;
-  bottom: 0; */
 }
 
 .mc-input--error-msg a {
@@ -63,31 +63,6 @@ input.mc-input--error {
   margin: 0;
   max-width: 900px;
   margin: 0 auto;
-}
-
-.mc-label {
-  font-size: small;
-  color: #fff;
-  font-weight: 900;
-}
-
-span.mc-input--error {
-  color: #f97282;
-  font-weight: 900;
-}
-
-.response.error {
-  color: #f97282;
-}
-
-.response.success {
-  color: #8bcc8b;
-}
-
-.msg {
-  background-color: #ffffe0;
-  font-size: small;
-  padding: 20px;
 }
 
 input#mc-embedded-subscribe  {
