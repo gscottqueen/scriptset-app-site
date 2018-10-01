@@ -125,7 +125,7 @@ class MailChimp extends Component {
   render () {
     return (
       <div>
-        <Fade bottom delay={2000} duration={1500} when={this.state.show}>
+        <Fade bottom delay={ (this.state.loading === false) + 2000 } duration={1500} when={this.state.show}>
           <div style={ stickyFooterStyles } >
             <form 
                 className={this.state.inputClass + "-msg"}
