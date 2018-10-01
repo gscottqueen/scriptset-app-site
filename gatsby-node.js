@@ -7,6 +7,7 @@ exports.modifyBabelrc = ({ babelrc }) => ({
   ...babelrc,
   plugins: babelrc.plugins.concat(
     ['transform-regenerator'],
-    ['transform-runtime']
+    ['transform-runtime'],
+    ['emotion']
   ),
 }) // to deal with our async issue on static files https://github.com/gatsbyjs/gatsby/issues/3931

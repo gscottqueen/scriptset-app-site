@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import { validate } from 'email-validator'
+import { css } from 'react-emotion'
+import { ClipLoader } from 'react-spinners'
 
 // nodes
 import Fade from 'react-reveal/Fade';
@@ -18,11 +20,20 @@ const stickyFooterStyles = {
   "border": "2px solid #000"
 }
 
+const loadingText = {
+  "padding-right": "10px",
+  "font-size": "12px",
+  "position": "relative",
+  "top": "-4px"
+}
+
 class MailChimp extends Component {
 
   constructor() {
     super()
     this.state = {
+      loading: false,
+      buttonValue: 'Notify Me',
       show: false,
       email: '',
       response: {
@@ -54,6 +65,7 @@ class MailChimp extends Component {
     const isEmailValid = validate(userEmail)
     if (!isEmailValid) {
       this.setState({
+        buttonValue: 'Notify Me',
         response: {
           result: `error`,
           msg: 'Must be a valid email address.'
@@ -61,14 +73,21 @@ class MailChimp extends Component {
         inputClass: 'mc-input--error',
       })
     }
-
+    
     // send to mailchimp
     const response = await addToMailchimp(this.state.email)
+    .then(
+      this.setState({
+        buttonValue: '',
+        loading: true,
+    }))
     .then(response => {
       // Mailchimp always returns a 200 response
       // So we check the result for MC errors & failures
       if (response.result !== `success`) {
-        this.setState({       
+        this.setState({
+          buttonValue: 'Notify Me',
+          loading: false,    
           response: {
             result: response.result,
             msg: response.msg
@@ -78,6 +97,8 @@ class MailChimp extends Component {
       } else {
         // Email address succesfully subcribed to Mailchimp
         this.setState({ 
+          buttonValue: 'Success',
+          loading: false,
           show: !this.state.show,    
           response: {
             result: response.result,
@@ -90,6 +111,8 @@ class MailChimp extends Component {
     .catch(err => {
       // Network failures, timeouts, etc
       this.setState({
+        buttonValue: 'Notify Me',
+        loading: false,
         response: {
           result: response.result,
           msg: response.msg
@@ -123,7 +146,7 @@ class MailChimp extends Component {
                 <label 
                   htmlFor="mce-EMAIL"
                   className="mc-label required">Email Address<span 
-                  className={this.state.inputClass} >*</span></label> : 
+                  className={ this.state.inputClass } >*</span></label> : 
                 <label 
                   htmlFor="mce-EMAIL"
                   className="mc-label required">Email Address</label>}
@@ -136,12 +159,23 @@ class MailChimp extends Component {
                       placeholder="Get a beta invite" 
                       className={ this.state.inputClass }
                       id="mce-EMAIL"/>
-                      <input 
+                      {/* loaiding indicator */}
+                      { this.state.loading === true ? 
+                        <div
+                        className="loading">
+                          <span style={ loadingText }>Loading</span>
+                        <ClipLoader
+                          sizeUnit={ "px" }
+                          size={ 15 }
+                          color={'#000'}
+                          loading= { this.state.loading  }
+                        /></div>
+                      : <input 
                         type="submit" 
-                        value="Notify Me" 
+                        value={ this.state.buttonValue } 
                         name="subscribe" 
                         id="mc-embedded-subscribe" 
-                        className="mc-embedded-subscribe"/>
+                        className="mc-embedded-subscribe"/> }
                     </div>
                   </div>
                   <div 
