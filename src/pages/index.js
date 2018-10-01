@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => (
     <div style={ imgWrapperStyles }>
       <img src={ macComp } style={ imgStyles }/>
     </div>
-    <div style={ statementStyles }>A new progressive web application to help screenwriters get from <em>script</em> to set.</div>
+    <div style={ statementStyles }>A new, progressive web application that helps writers create and collaobrate on scripts made for Television.</div>
     <div style={ asideStyles }>
       <LeadIn/>
       <FeatureBlock/>

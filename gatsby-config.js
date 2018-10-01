@@ -2,11 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Scriptset',
     tagline: 'Get made.',
-    titleDescription: 'New web application for screenwriters',
-    description: 'Scriptset helps screenwriters get from script to set.',
-    image: 'ImacSocial.af60ef54.png',
+    titleDescription: 'Teleplay Software',
+    description: 'Scriptset helps writers create and collaobrate on scripts made for Television.',
     gverification: 'sU_agIsWKce7XYoxt4f9yRmlr6XZSw4GqCZu6LQlMCo',
-    keywords: ['screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']
+    keywords: ['teleplay, free teleplay, free teleplay software, tleplay software, screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']
   },
   plugins: [
     {
