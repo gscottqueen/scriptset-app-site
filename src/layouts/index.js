@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'regenerator-runtime/runtime'
-import './ImacSocial.png'
 
 import './index.css'
 
@@ -14,10 +13,8 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: data.site.siteMetadata.description },
         { name: 'keywords', content: data.site.siteMetadata.keywords },
         { property:'og:description', content: data.site.siteMetadata.description },
-        { property: 'og:image', content: '//www.written-app.io.com/static/' + data.site.siteMetadata.image },
         { property: 'og:url', content: '//written-app.io/'},
         { property: 'twitter:description', content: data.site.siteMetadata.description },
-        { property: 'twitter:image', content: '//www.written-app.io.com/static/' + data.site.siteMetadata.image },
         { property: 'twitter:url', content: '//written-app.io/'},
         { name: 'google-site-verification', content:data.site.siteMetadata.gverification}
       ]}
@@ -48,7 +45,6 @@ export const query = graphql`
         titleDescription
         description
         gverification
-        image
         keywords
       }
     }
