@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Scriptset',
-    tagline: 'Get made.',
+    tagline: 'Made for TV.',
     titleDescription: 'Teleplay Software',
-    description: 'Scriptset helps writers create and collaborate on scripts made for Television.',
+    description: 'Scriptset helps writers create and collaborate on scripts made for Television, Web Series, and anything else you can stream on.',
     gverification: 'sU_agIsWKce7XYoxt4f9yRmlr6XZSw4GqCZu6LQlMCo',
     keywords: ['teleplay, free teleplay, free teleplay software, tleplay software, screenplay, screenplay software, free screenplay software, screen play software, best screenplay software, screenwriter software, free screenwriter software, script writer software, best screenwritting software']
   },

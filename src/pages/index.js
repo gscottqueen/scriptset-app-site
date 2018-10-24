@@ -70,15 +70,15 @@ const imgWrapperStyles = {
 }
 
 const IndexPage = ({ data }) => (
-  <div style={ wrapperStyles }>
-    <div style={ titleWrapperStyles }>
-      <Header siteTitle={ data.site.siteMetadata.title } tagline={ data.site.siteMetadata.tagline }/>
+  <div style={wrapperStyles}>
+    <div style={titleWrapperStyles}>
+      <Header siteTitle={data.site.siteMetadata.title} tagline={data.site.siteMetadata.tagline}/>
     </div>
-    <div style={ imgWrapperStyles }>
-      <img src={ macComp } style={ imgStyles }/>
+    <div style={imgWrapperStyles}>
+      <img src={macComp} style={imgStyles}/>
     </div>
-    <div style={ statementStyles }>A new, progressive web application that helps writers create and collaborate on scripts made for Television.</div>
-    <div style={ asideStyles }>
+    <div style={statementStyles}>Scriptset helps writers create and collaborate on scripts made for Television, Web Series, and anything else you can stream on.</div>
+    <div style={asideStyles}>
       <LeadIn/>
       <FeatureBlock/>
     </div>

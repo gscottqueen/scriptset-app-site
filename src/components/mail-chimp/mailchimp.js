@@ -21,8 +21,8 @@ const stickyFooterStyles = {
 }
 
 const loadingText = {
-  "padding-right": "10px",
-  "font-size": "12px",
+  "paddingRight": "10px",
+  "fontSize": "12px",
   "position": "relative",
   "top": "-4px"
 }
@@ -50,6 +50,13 @@ class MailChimp extends Component {
       email: event.target.value,
       inputClass: 'mc-input'
      })
+  }
+
+  // our input event
+  hideForm = () => {
+    this.setState({ 
+      show: false
+      })
   }
 
   componentDidMount = () => {
@@ -98,8 +105,7 @@ class MailChimp extends Component {
         // Email address succesfully subcribed to Mailchimp
         this.setState({ 
           buttonValue: 'Success',
-          loading: false,
-          show: !this.state.show,    
+          loading: false,    
           response: {
             result: response.result,
             msg: response.msg
@@ -125,8 +131,11 @@ class MailChimp extends Component {
   render () {
     return (
       <div>
-        <Fade bottom delay={ (this.state.loading === false) + 2000 } duration={1500} when={this.state.show}>
-          <div style={ stickyFooterStyles } >
+        <Fade bottom 
+          delay={2000} 
+          duration={1500} 
+          when={this.state.show}>
+          <div style={stickyFooterStyles} >
             <form 
                 className={this.state.inputClass + "-msg"}
                 onSubmit={
@@ -142,40 +151,40 @@ class MailChimp extends Component {
                 className="mc-embedded-subscribe-form"
                 noValidate>
                 <div className="mc-field-group">
-                { this.state.inputClass === `mc-input--error` ? 
+                {this.state.inputClass === `mc-input--error` ? 
                 <label 
                   htmlFor="mce-EMAIL"
                   className="mc-label required">Email Address<span 
-                  className={ this.state.inputClass } >*</span></label> : 
+                  className={this.state.inputClass}>*</span></label> : 
                 <label 
                   htmlFor="mce-EMAIL"
                   className="mc-label required">Email Address</label>}
                   <div className="input-group">
                     <input 
                       type="email" 
-                      onChange={ this.handleEmailChange }
-                      value={ this.state.email }  
+                      onChange={this.handleEmailChange}
+                      value={this.state.email}  
                       name="EMAIL"
                       placeholder="Get a beta invite" 
-                      className={ this.state.inputClass }
+                      className={this.state.inputClass}
                       id="mce-EMAIL"/>
                       {/* loaiding indicator */}
-                      { this.state.loading === true ? 
+                      {this.state.loading === true ? 
                         <div
                         className="loading">
-                          <span style={ loadingText }>Loading</span>
+                          <span style={loadingText}>Loading</span>
                         <ClipLoader
-                          sizeUnit={ "px" }
-                          size={ 15 }
+                          sizeUnit={"px"}
+                          size={15}
                           color={'#000'}
-                          loading= { this.state.loading  }
+                          loading= {this.state.loading}
                         /></div>
                       : <input 
                         type="submit" 
-                        value={ this.state.buttonValue } 
+                        value={this.state.buttonValue} 
                         name="subscribe" 
                         id="mc-embedded-subscribe" 
-                        className="mc-embedded-subscribe"/> }
+                        className="mc-embedded-subscribe"/>}
                     </div>
                   </div>
                   <div 
@@ -189,9 +198,9 @@ class MailChimp extends Component {
                   </div>
                 </form>
                 {/* input response message */}
-                { this.state.response.result === `error` || `success` ? 
+                {this.state.response.result === `error` || `success` ? 
                   <Fade top><span className={this.state.inputClass + "-msg"}  dangerouslySetInnerHTML={{__html: this.state.response.msg}} /></Fade>
-                : null }
+                : null}
               </div>
             </Fade>
           </div>

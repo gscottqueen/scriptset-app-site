@@ -18,9 +18,9 @@ const statementStyle = {
 }
 
 const StatementBanner = () => (
-  <div style={ bannerStyles }>
-    <div style={ bannerContentStyles }>
-        <h2 style={ statementStyle }>We choose to be creators...</h2>
+  <div style={bannerStyles}>
+    <div style={bannerContentStyles}>
+        <h2 style={statementStyle}>We choose to be creators...</h2>
           <p>When telling your story, there can be many obstacles to overcome. Don't let outdated screenwriter software keep you from getting there. Beta versions of Scriptset will be released as early as June 2019.</p>
     </div>
   </div>

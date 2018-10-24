@@ -17,10 +17,10 @@ const logoStyle = {
   "width" : "250px"
 }
 
-const Header = ({ tagline }) => (
+const Header = ({tagline}) => (
   <div>
-    <h1 style={ headingStyles }><img style={ logoStyle } src={ imgLogo }></img></h1>
-    <span style={ taglineStyles }>{ tagline }</span>
+    <h1 style={headingStyles}><img style={logoStyle} src={imgLogo}></img></h1>
+    <span style={taglineStyles}>{tagline}</span>
   </div>
 )
 
