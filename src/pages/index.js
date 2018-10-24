@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => (
     <div style={imgWrapperStyles}>
       <img src={macComp} style={imgStyles}/>
     </div>
-    <div style={statementStyles}>Scriptset helps writers create and collaborate on scripts made for Television, Web Series, and anything else you can stream on.</div>
+    <div style={statementStyles}>Scriptset helps writers create and collaborate on scripts made for Television.</div>
     <div style={asideStyles}>
       <LeadIn/>
       <FeatureBlock/>

@@ -50,7 +50,7 @@ const FeatureBlock = () => (
         <li style={ listItemStyle }>
           <img src={ write } style={ firstListIcnStyle }/>
           <h3>Write</h3>
-          <p style={ descriptionStyle }>Styleguide driven intuitive interface lets you focus on creating.</p>
+          <p style={ descriptionStyle }>Style guide driven intuitive interface lets you focus on creating.</p>
         </li>
       </Fade>
       <Fade bottom big>
@@ -85,7 +85,7 @@ const FeatureBlock = () => (
         <li style={ listItemStyle }>
           <img src={ storycard } style={ icnStyle } alt=""/>
           <h3>Storycard</h3>
-          <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop storycards.</p>
+          <p style={ descriptionStyle }>Reshape your storyline with ease using drag and drop story cards.</p>
         </li>
       </Fade>
       </ul>
